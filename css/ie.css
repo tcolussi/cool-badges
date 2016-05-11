@@ -1,0 +1,61 @@
+.profile,
+.alert,
+#main,
+#picture,
+#description,
+#submit,
+#badges,
+.tabs a,
+.panes .pane,
+#steps,
+#steps .number,
+#footer { behavior: url(css/pie.htc); }
+ 
+.profile { -pie-border-radius: 5px; }
+ 
+#main {
+	-pie-background: rgba(0, 0, 0, 0.2);
+	-pie-border-radius: 5px; 
+}
+ 
+#picture {
+	-pie-background: rgba(0, 0, 0, 0.2);
+	-pie-border-radius: 5px; 
+}
+ 
+#description { 
+	-pie-border-radius: 5px; 
+	-pie-background: rgba(0, 0, 0, 0.3);
+}
+ 
+#submit { -pie-border-radius: 5px; }
+ 
+#badges {
+	-pie-background: rgba(0, 0, 0, 0.2);
+	-pie-border-radius: 5px; 
+}
+
+.tabs a {
+	-pie-background: rgba(0, 0, 0, 0.3);
+	-pie-border-radius: 5px; 
+}
+ 
+.tabs a:hover { -pie-background: #1BADDF; }
+ 
+.tabs a.current { -pie-background: #1BADDF; }
+ 
+.panes .pane { -pie-border-radius: 5px; }
+ 
+.alert { -pie-border-radius: 5px; }
+ 
+#steps {
+	-pie-background: rgba(255, 255, 255, 0.1);
+	-pie-border-radius: 5px;
+}
+ 
+#steps .number {
+	-pie-background: rgba(0, 0, 0, 0.3);
+	-pie-border-radius: 50%; 
+}
+ 
+#footer { -pie-background: rgba(0, 0, 0, 0.4); }

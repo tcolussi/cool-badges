@@ -1,0 +1,486 @@
+/*-----------------------------------------------------------------------------------
+
+App Name: Cool Badges
+App URL: http://apps.volumens.com/cool-badges/
+Description: A Facebook App to add cool badges to your profile picture
+Author: Volumens
+Author URI: http://www.volumens.com
+Version: 1.5
+
+-----------------------------------------------------------------------------------
+	
+	1.	CSS Reset & Clearfix
+	2.	Document Setup
+	3.	Header Styles
+	4.	Navigation 
+	5.	Main Content Styles
+	6.	Footer Styles
+	
+-----------------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------------*/
+/*	1.	CSS Reset & Clearfix - http://meyerweb.com/eric/tools/css/reset/
+/*-----------------------------------------------------------------------------------*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; } body { line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: none; } blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } :focus { outline: 0; } ins { text-decoration: none; } del { text-decoration: line-through; } table { border-collapse: collapse; border-spacing: 0; }
+
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; } .clearfix { display: inline-block; } /* Hide from IE Mac \*/ .clearfix { display: block; } /* End hide from IE Mac */ .none { display: none; } /* End Clearfix */
+
+
+/*-----------------------------------------------------------------------------------*/
+/*	2.	Document Setup 
+/*-----------------------------------------------------------------------------------*/
+
+body {
+	font: 13px/20px "Droid Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+	color: #555555;
+	background: url(../images/bgs/bg-28.jpg) repeat #004772;
+}
+
+a, 
+input {
+	text-decoration: none;
+	-webkit-transition: background-color .3s linear, color .3s linear, opacity 0.3s ease-in-out 0s;
+	-moz-transition: background-color .3s linear, color .3s linear, opacity 0.3s ease-in-out 0s;
+	-o-transition: background-color .3s linear, color .3s linear, opacity 0.3s ease-in-out 0s;
+	-ms-transition: background-color .3s linear, color .3s linear, opacity 0.3s ease-in-out 0s;
+	transition: background-color .3s linear, color .3s linear, opacity 0.3s ease-in-out 0s;
+}
+
+a:hover { text-decoration: none; }
+
+.profile,
+.tooltip ul li a:hover,
+#submit,
+.tabs a:hover,
+.tabs a.current,
+#content .number { background-color: #1BADDF; }
+
+.left { float: left; }
+
+.right { float: right; }
+
+.inner {
+    margin: auto;
+    width: 960px;
+}
+
+#preloader { 
+	position: fixed; 
+	left: 0; 
+	top: 0; 
+	z-index: 99999; 
+	width: 100%; 
+	height: 100%; 
+	background: #000000 url(../images/preloader.gif) no-repeat center; 
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/*	3.	Header Styles
+/*-----------------------------------------------------------------------------------*/
+
+#header { height: 120px; }
+
+#header .logo {
+    display: block;
+	margin:15px 0 0 20px;
+	position: relative;
+}
+
+#header .like-button {
+	position: absolute;
+    left: 240px;
+    top: 25px;
+	z-index: 9999;
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/*	4.	Navigation 
+/*-----------------------------------------------------------------------------------*/
+
+.profile {
+	position: relative;
+    background-image: url(../images/nav-bg.png);
+	background-repeat: repeat-x;
+	margin-top: 40px; 
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;	
+	z-index: 9999;
+}
+
+.trigger {
+	height: 40px;
+	line-height: 40px;
+    display: block;
+	color: #FFFFFF;
+	font-size: 14px;
+	padding: 0 40px 0 20px;
+    display: block;
+	cursor: pointer;
+}
+
+.trigger span { 
+	position: absolute;
+	right: 20px;
+	top: 17px;
+	height: 7px;
+	width: 10px;
+	display: block;
+	background: url(../images/drop-arrow.png);
+}
+
+.tooltip {
+    display: none;
+    background: url(../images/tooltip.png) no-repeat;
+    height: 128px;
+    width: 180px;
+	padding-top: 22px;
+}
+
+.tooltip ul li a { 
+	height: 40px;
+	line-height: 40px;
+    display: block;
+	color: #FFFFFF;
+	font-size: 14px;
+	font-weight: bold;
+    display: block;
+}
+
+.tooltip ul li a:hover { 
+	background-image: url(../images/nav-bg.png); 
+	background-repeat: repeat-x;
+}
+
+.tooltip ul li a span {
+    background: url(../images/span-arrow.png) no-repeat 10px 15px;
+    display: block;
+    padding-left: 25px;
+	margin: 0 10px;
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/*	5.	Main Content Styles
+/*-----------------------------------------------------------------------------------*/
+
+#main {
+    background: rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+    margin: 0 auto 30px;
+    width: 920px;
+	padding: 20px;
+	position: relative;
+}
+
+#left-add {
+   position: absolute; 
+   left: -140px;
+}
+
+#right-add {
+   position: absolute; 
+   right: -140px;
+}
+
+#picture {
+	float: left; 
+	width: 420px;
+	text-align: center;
+	background: rgba(0, 0, 0, 0.2);
+	padding: 20px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+}
+
+#description {
+	font: 13px/20px "Droid Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+	height: 38px;
+    line-height: 38px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+	width: 400px; 
+	background: rgba(0, 0, 0, 0.2);
+	padding: 0 10px 0 10px;  
+	color: #ffffff; 
+	font-weight: bold;
+	border: none;
+}
+
+#background {
+	position: relative;  
+	margin: 20px 0 20px 0;
+}
+
+#preview { float: left; }
+
+#add-img {
+	position: absolute; 
+	right: 0; 
+	bottom: 0;
+}
+
+/* Submit Button */
+
+#submit {
+	font: 13px/20px "Droid Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+	cursor: pointer; 
+	background-image: url(../images/nav-bg.png); 
+	height: 40px; 
+	color: #FFFFFF;
+	font-weight: bold;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+	border: none;
+	padding: 0 20px;
+	overflow: visible;
+	position: relative;
+}
+
+#submit:active { top: 1px; }
+
+/* Tabs */
+
+#badges {
+	float: right; 
+	width: 400px;
+	background: rgba(0, 0, 0, 0.2);
+	padding: 20px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+}
+
+.wrap { position: relative; }
+
+.scrollable {
+    position: relative;
+    overflow: hidden;
+    width: 320px;
+    height: 50px;
+	float: left;
+}
+
+.scrollable .items {
+    width: 20000em;
+    position: absolute;
+    clear: both;
+}
+
+.scrollable .items div {
+    float: left;
+    width: 320px;
+}
+
+.scrollable .active {
+    border: 2px solid #000;
+    position: relative;
+    cursor: default;
+}
+
+a.browse {
+    background: url(../images/arrows.png);
+    display: block;
+    width: 30px;
+    height: 30px;
+    float: left;
+    cursor: pointer;
+	position: absolute;
+}
+
+a.browse:active { top: 1px; }
+
+a.right { right: 0; }
+
+a.left {
+	right: 35px; 
+	background-position: left bottom;
+}
+
+a.disabled { 
+	cursor: default;
+	zoom: 1;
+	filter: alpha(opacity=50);
+	opacity: 0.5;
+}
+
+a.disabled:active { top: 0; }
+
+.tabs a {
+    display: block;
+	float: left;
+	margin-right: 10px;
+	background: rgba(0, 0, 0, 0.3);
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: bold;
+    height: 30px;
+	line-height: 30px;
+	width: 99px;
+	text-align: center;
+	position: relative;
+}
+
+.tabs a:active { 
+	outline: none; 
+	position: relative; 
+	top: 1px;
+}
+
+.tabs a.current:active { top: 0; }
+
+.tabs a.last { margin: 0; }
+
+.panes { position: relative; }
+
+.panes .pane {
+	display: none;
+	padding: 10px; 
+	background: #ffffff; 
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+	float: left;
+	width: 380px;
+	position: relative;
+}
+	
+.obj-item{
+	width: 120px; 
+	height: 120px;
+	margin: 3px; 
+	float: left; 
+	cursor: pointer;
+}
+
+/* Alert Messages */
+
+.alert {  
+	position: relative;
+	margin-bottom: 20px; 
+	padding: 20px 20px 20px 85px;
+	height: 50px;
+	line-height: 50px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+	-o-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+}
+
+#loading {  
+	background: url(../images/notice.png) no-repeat 20px center #D6E9FA;
+    border: 1px solid #B3D6F7;
+	color: #3c677e;
+	display: none;
+}
+
+#success {  
+	background: url(../images/success.png) no-repeat 20px center #DFF4D1;
+    border: 1px solid #B3E68B;
+	color: #657E3C;
+}
+
+#error {  
+	background: url(../images/error.png) no-repeat 20px center #FFE0D5;
+    border: 1px solid #FAC0AD;
+	color: #BF210E;
+}
+
+/* Steps Section */
+
+#steps {
+    background: rgba(255, 255, 255, 0.1);
+    margin: 0 auto 45px;
+    width: 920px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px 20px 40px 20px;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+#steps .column {
+    float: left;
+    margin-right: 20px;
+    width: 293px;
+	color: #ffffff;
+}
+
+#steps #last { margin-right: 0; }
+
+#steps h3 {
+    background: url(../images/divider.png) repeat-x left bottom;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.55);
+	font-weight: 300;
+	font-size: 36px;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	color: #ffffff;
+	line-height: normal;
+}
+
+#steps .number {
+	background: rgba(0, 0, 0, 0.3);
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-o-border-radius: 50%;
+    float: left;
+    font-size: 30px;
+	line-height: 50px;
+	width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    text-align: center;
+	color: #ffffff;
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/*	6.	Footer Styles
+/*-----------------------------------------------------------------------------------*/
+
+#footer {
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+	padding: 20px 0;
+}
+
+#footer .inner {
+	color: #ffffff;
+	zoom: 1;
+	filter: alpha(opacity=50);
+	opacity: 0.5;
+}
+
+#footer .inner a {
+	color: #ffffff;
+	font-weight: bold;
+}
+
+#footer .inner a:hover { border-bottom: 1px solid #ffffff; }
